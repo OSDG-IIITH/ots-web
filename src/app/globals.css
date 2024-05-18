@@ -2,19 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
+
+
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -26,6 +22,31 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.background-container {
+  position: relative;
+  width: 100vw;
+  height: auto; /* or any height you prefer */
+  min-height: 100vh;
+  background-image: url('/bg_top.svg');
+  background-size: 100vw 100vh; 
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 20%;
+  z-index:-1;
+  align-items: center;
+}
+
+.content {
+  position: relative;
+  
+  z-index: 1; /* Ensure the content is above the background */
+  
+}
+.flex-auto {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Vertically center the items */
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
