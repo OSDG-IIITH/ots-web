@@ -25,21 +25,23 @@ body {
 .background-container {
   position: relative;
   width: 100vw;
-  height: auto; /* or any height you prefer */
-  min-height: 100vh;
-  background-image: url('/bg_top.svg');
-  background-size: 100vw auto; /* changed height to auto so that shape extends to the sides */
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-bottom: 20%;
-  /* padding-top: 20%; */
-  padding-bottom: 100%; /* remove this for the flat shape */
+  height: 100vh; /* or any height you prefer */
+  background-image: url('/bg_faded_dots.svg'), url('/bg_shape.svg');
+  background-position: top center, center 100%;
+  background-size: contain, cover;
+  background-repeat: no-repeat, no-repeat;
   z-index: -1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+@media (max-width: 768px), (max-device-width: 1024px) and (orientation: portrait) {
+  .background-container {
+    background-size: contain, contain;
+    background-position: top center, center 20%; /* Adjust the positioning for smaller screens */
+  }
+}
 
 .content {
   position: relative;
