@@ -1,6 +1,46 @@
-import Image from "next/image";
+"use client";
+import {useEffect, useState} from "react";
 
 export default function Home() {
+  const [countdown, setCountdown] = useState({ days: 0, hours: 0 });
+
+  useEffect(() => {
+    // Calculate the remaining time until September 11, 2024, 00:00 IST
+    const targetDate = new Date("2024-09-11T00:00:00+05:30"); // 00:00 IST
+    const currentDate = new Date();
+    const timeDifference = targetDate - currentDate;
+
+    // Calculate remaining days and hours
+    const remainingDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const remainingHours = Math.floor(
+      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+
+    // Update the countdown state
+    setCountdown({
+      days: String(remainingDays).padStart(2, "0"),
+      hours: String(remainingHours).padStart(2, "0"),
+    });
+
+    // Update the countdown every second
+    const interval = setInterval(() => {
+      const newCurrentDate = new Date();
+      const newTimeDifference = targetDate - newCurrentDate;
+      const newRemainingDays = Math.floor(
+        newTimeDifference / (1000 * 60 * 60 * 24)
+      );
+      const newRemainingHours = Math.floor(
+        (newTimeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      setCountdown({
+        days: String(newRemainingDays).padStart(2, "0"),
+        hours: String(newRemainingHours).padStart(2, "0"),
+      });
+    }, 1000);
+
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, []); // Run this effect only once on component mount
   return (
     <main className="flex min-h-screen items-center justify-center">
       <div className="background-container w-full">
@@ -25,13 +65,13 @@ export default function Home() {
             <div className="flex flex-row items-center justify-evenly text-transparent">
               <div className="bg-[#18181c] flex flex-col rounded-2xl items-center justify-center mt-10 ml-5 mr-6 mb-10 px-10 pt-5 pb-2">
                 <div className="bg-gradient-to-b from-white to-[#80d8de] text-transparent bg-clip-text flex flex-col items-center justify-center">
-                  <span className="my-2 mx-5 text-5xl font-bold mb-2"> 90 </span>
+                  <span className="my-2 mx-5 text-5xl font-bold mb-2"> {countdown.days} </span>
                   <span className="my-2 mx-5 text-lg font-bold mb-2"> Days </span>
                 </div>
               </div>
               <div className="bg-[#18181c] flex flex-col rounded-2xl items-center justify-center mt-10 ml-6 mr-5 mb-10 px-10 pt-5 pb-2">
                 <div className="bg-gradient-to-b from-white to-[#80d8de] text-transparent bg-clip-text flex flex-col items-center justify-center">
-                  <span className="my-2 mx-5 text-5xl font-bold mb-2"> 13 </span>
+                  <span className="my-2 mx-5 text-5xl font-bold mb-2"> {countdown.hours} </span>
                   <span className="my-2 mx-5 text-lg font-bold mb-2"> Hours </span>
                 </div>
               </div>
