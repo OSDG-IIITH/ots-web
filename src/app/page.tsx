@@ -6,9 +6,9 @@ export default function Home() {
       <div className="background-container w-full">
         <div className="content flex flex-col items-center justify-center w-full">
           <div className="main-heading text-center flex items-center justify-center mt-8">
-            <div className="heading-flex flex items-center justify-center mt-8">
-              <img src="/ots.svg" alt="Open Tech Summit Logo" className="w-24 h-24 -mr-2" />
-              <h1 className="text-2xl md:text-5xl font-bold ml-4">Open Tech Summit</h1>
+            <div className="heading-media heading-flex flex items-center justify-center mt-8 md:p-24">
+              <img src="/ots.svg" alt="Open Tech Summit Logo" className=" responsive-image max-w-full max-h-full"/>
+              <h1 className="text-5xl md:text-7xl font-bold ml-4">Open Tech Summit</h1>
             </div>
           </div>
           {/* Countdown Timer */}

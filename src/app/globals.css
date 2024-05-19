@@ -25,7 +25,7 @@ body {
 .background-container {
   position: relative;
   width: 100vw;
-  height: 100vh; /* or any height you prefer */
+  height: 100vh, 10vh; /* or any height you prefer */
   background-image: url('/bg_faded_dots.svg'), url('/bg_shape.svg');
   background-position: top center, center 100%;
   background-size: contain, cover;
@@ -40,6 +40,13 @@ body {
   .background-container {
     background-size: contain, contain;
     background-position: top center, center 20%; /* Adjust the positioning for smaller screens */
+  }
+  .heading-media {
+    display:flex;
+    flex-direction: column;
+  }
+  h1{
+    font-size: 50%;
   }
 }
 
