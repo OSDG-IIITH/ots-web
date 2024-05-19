@@ -4,10 +4,10 @@ export default function Home() {
   return (
     <main className="flex min-h-screen items-center justify-center">
       <div className="background-container w-full">
-        <div className="content flex flex-col items-center justify-center w-full">
+        <div className="content flex flex-col items-center justify-center w-full " style={{ padding: '5%' }}>
           <div className="main-heading text-center flex items-center justify-center mt-8">
-            <div className="heading-media heading-flex flex items-center justify-center mt-8 md:p-24">
-              <img src="/ots.svg" alt="Open Tech Summit Logo" className=" responsive-image max-w-full max-h-full"/>
+            <div className="heading-media heading-flex flex items-center justify-center mt-8" >
+              <img src="/ots.svg" alt="Open Tech Summit Logo" className=" responsive-image max-w-full max-h-full" />
               <h1 className="text-5xl md:text-7xl font-bold ml-4">Open Tech Summit</h1>
             </div>
           </div>
@@ -37,11 +37,19 @@ export default function Home() {
               </div>
             </div>
             {/* Keep Me Updated Button */}
-            <div className="flex flex-col items-center justify-center mt-5">
-              <div className="bg-gradient-to-r from-[#4fd4cd] to-[#275fe8] text-white rounded-lg mb-8">
-                <p className="px-5 py-2 text-base">Keep Me Updated</p>
+            
+              <div className="flex flex-col items-center justify-center mt-5">
+                <div className="bg-gradient-to-r from-[#4fd4cd] to-[#275fe8] text-white rounded-lg mb-8">
+                <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=OTS&details=Open Tech Summit 2024 IIIT-H&dates=20240911T103000/20240913T184500&location=IIIT Hyderabad"
+              className="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block bg-gradient-to-r from-[#4fd4cd] to-[#275fe8] text-white"
+            >
+              <p className="px-5 py-2 text-base">Keep me updated</p>
+            </a>
+                </div>
+
               </div>
-            </div>
+            
           </div>
         </div>
       </div>
