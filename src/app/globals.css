@@ -22,45 +22,66 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.background-container {
-  position: relative;
-  width: 100vw;
-  height: 100vh, 10vh; /* or any height you prefer */
-  background-image: url('/bg_faded_dots.svg'), url('/bg_shape.svg');
-  background-position: top center, center 100%;
-  background-size: contain, cover;
-  background-repeat: no-repeat, no-repeat;
+.faded-dots {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  background-image: url('/bg_faded_dots.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: -40%;
   z-index: -1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-@media (max-width: 768px), (max-device-width: 1024px) and (orientation: portrait) {
-  .background-container {
-    background-size: contain, contain;
-    background-position: top center, center 20%; /* Adjust the positioning for smaller screens */
+.shape {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  background-image: url('/bg_shape.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: -82%;
+  z-index: -1;
+}
+
+@media (min-width: 350px) and (max-width: 768px) {
+  .faded-dots {
+    top: -60%;
   }
-  .heading-media {
-    display:flex;
-    flex-direction: column;
+}
+
+@media (max-width: 350px) {
+  .faded-dots {
+    top: -80%;
   }
-  h1{
-    font-size: 50%;
-  }
+}
+
+.background-container {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  background-image: url('/bg_faded_dots.svg'), url('/bg_shape.svg');
+  /* object-fit: cover; */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: -82%;
+  z-index: -1;
 }
 
 .content {
   position: relative;
   
-  z-index: 1; /* Ensure the content is above the background */
+  z-index: 1;
   
 }
 .flex-auto {
   padding-left: 1%;
   display: flex;
   flex-direction: row;
-  align-items: center; /* Vertically center the items */
+  align-items: center;
 }
 @layer utilities {
   .text-balance {
