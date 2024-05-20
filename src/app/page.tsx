@@ -44,8 +44,10 @@ export default function Home() {
   }, []); // Run this effect only once on component mount
   return (
     <main className="flex items-center justify-center">
-      <div className="background-container w-full">
-      </div>
+      <div className="faded-dots w-full"></div>
+      <div className="shape w-full"></div>
+      {/* <div className="background-container w-full"> */}
+      {/* </div> */}
         <div className="content flex flex-col items-center justify-center w-full">
           <div className="main-heading text-center flex flex-col items-center justify-center">
             <div className="heading-media heading-flex flex items-center justify-center">
