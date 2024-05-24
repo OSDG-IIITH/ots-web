@@ -10,24 +10,17 @@ export default function Home() {
   const [countdown, setCountdown] = useState({ days: 0, hours: 0 });
 
   useEffect(() => {
-    // Calculate the remaining time until September 11, 2024, 00:00 IST
     const targetDate = new Date("2024-09-11T00:00:00+05:30").getTime(); // 00:00 IST
     const currentDate = new Date().getTime();
     const timeDifference = targetDate - currentDate;
-
-    // Calculate remaining days and hours
     const remainingDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const remainingHours = Math.floor(
       (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
-
-    // Update the countdown state
     setCountdown({
-      days: Number(String(remainingDays).padStart(2, "0")),
-      hours: Number(String(remainingHours).padStart(2, "0")),
+      days: String(remainingDays).padStart(2, "0"),
+      hours: String(remainingHours).padStart(2, "0"),
     });
-
-    // Update the countdown every second
     const interval = setInterval(() => {
       const newCurrentDate = new Date().getTime();
       const newTimeDifference = targetDate - newCurrentDate;
@@ -38,21 +31,17 @@ export default function Home() {
         (newTimeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
       setCountdown({
-        days: Number(String(newRemainingDays).padStart(2, "0")),
-        hours: Number(String(newRemainingHours).padStart(2, "0")),
+        days: String(newRemainingDays).padStart(2, "0"),
+        hours: String(newRemainingHours).padStart(2, "0"),
       });
     }, 1000);
-
-    // Cleanup function to clear the interval when the component unmounts
     return () => clearInterval(interval);
-  }, []); // Run this effect only once on component mount
+  }, []);
   return (
     <main className="flex flex-col items-center justify-center">
 
       <div className="faded-dots w-full"></div>
       <div className="shape w-full"></div>
-      {/* <div className="background-container w-full"> */}
-      {/* </div> */}
       <section className="content flex flex-col items-center justify-center w-full">
         <div className="main-heading text-center flex flex-col items-center justify-center">
           <div className="heading-media heading-flex flex items-center justify-center">
@@ -92,6 +81,7 @@ export default function Home() {
           {/* Keep Me Updated Button */}
           <div className="flex flex-col items-center justify-center mt-5">
             <div className="bg-gradient-to-r from-[#4fd4cd] to-[#275fe8] text-white rounded-lg md:mt-4 mb-8">
+              {/* To Add: Link Not Working */}
               {/* <a
                   href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=OTS&details=Open Tech Summit 2024 IIIT-H&dates=20240911T103000/20240913T184500&location=IIIT Hyderabad"
                   className="hover:bg-blue-700 text-white font-bold py-2 md:px-4 rounded inline-block bg-gradient-to-r from-[#4fd4cd] to-[#275fe8] text-white"
@@ -100,19 +90,16 @@ export default function Home() {
               {/* </a> */}
             </div>
           </div>
-
         </div>
-
       </section>
-
-
-
       {/* Events */}
-      <section className="p-30"><h2 className="text-center text-2xl md:text-4xl font-bold mb-8 pt-50">2 Days of Non-Stop Events</h2>
-        <div className="flex flex-col w-full pl-8 lg:pl-16">
-
-          <div className="cards-list mt-8">
-            {cardsData.map((card, index) => (
+      <section className="p-8 md:p-30">
+        <h2 className="flex items-center justify-center text-2xl md:text-4xl font-bold mt-8 md:mt-24">
+          2 Days of Non-Stop Events
+        </h2>
+        <div className="flex flex-wrap justify-center w-full mt-8 gap-4">
+          {cardsData.map((card, index) => (
+            <div className="flex justify-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
               <Card
                 key={index}
                 title={card.title}
@@ -120,13 +107,15 @@ export default function Home() {
                 description={card.description}
                 icon={card.icon}
               />
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
+
+
       {/* About */}
-      <div className="w-full mt-12 md:mt-24 px-4 py-10 flex flex-row flex-1">
-        <div className="flex justify-center p-24">
+      <div className="w-full px-4 py-10 flex flex-row flex-1">
+        <div className="flex justify-center">
           <img src='/ots_graphic.svg' alt="OTS Graphic" className="w-full" /></div>
         <div className="flex flex-col justify-center"><h2 className="bg-gradient-to-r from-white via-gray-300 to-gray-600 inline-block text-transparent bg-clip-text text-center text-2xl md:text-4xl font-bold mb-8"
 >The goodness of all your favourite clubs!</h2><h2 className="bg-gradient-to-r from-white via-gray-300 to-gray-600 inline-block text-transparent bg-clip-text text-center text-2xl md:text-4xl font-bold mb-8">Packed into one MEGA Event</h2></div>
@@ -134,7 +123,7 @@ export default function Home() {
       </div>
 
       {/* Sponsors */}
-      <section className="w-full mt-12 md:mt-24 px-4 bg-[#18181c] py-10">
+      <section className="w-full px-4 bg-[#18181c] py-10">
         <h2 className="text-center text-2xl md:text-4xl font-bold mb-8">Our Past Sponsors</h2>
         <div className="flex flex-wrap justify-center gap-8">
           {sponsors.map((sponsor) => (
@@ -150,6 +139,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Background section */}
+      <div className="globes w-full"></div>
+      
+      {/* Image Catalog */}
+      <section className="mt-16">
+        <h2 className="text-center text-2xl md:text-4xl font-bold mb-8">Let's Recreate These Great Moments!</h2> 
+        {/* To Add: Carousel */}
+      </section>
+
+      {/* Footer */}
+      <section className="bg-[#18181c] mt-12 w-full pt-16 py-4">
+        <div className="flex flex-row items-center justify-center">
+          <a href="https://www.instagram.com/osdg.iiith" target="_blank" className="instagram h-8 w-8 md:h-16 md:w-16 mx-2"> </a>
+          <a href="https://www.linkedin.com/company/74330374" target="_blank" className="linkedin h-8 w-8 md:h-16 md:w-16 mx-2"> </a>
+          <a href="https://discord.com/invite/wRpUHeJrmM" target="_blank" className="discord h-8 w-8 md:h-16 md:w-16 mx-2"> </a>
+        </div>
+        <p className="flex justify-center items-center text-sm md:text-base mt-9 md:mt-18">
+          All Rights Reserved @OSDG 2024
+        </p>
+      </section>
     </main>
   );
 }

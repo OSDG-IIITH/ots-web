@@ -44,33 +44,71 @@ body {
   background-repeat: no-repeat;
   top: -82%;
   z-index: -1;
-  padding-bottom:10%;
+  /* padding-bottom: 10%; */
 }
 
-@media (min-width: 350px) and (max-width: 768px) {
+.globes {
+  position: relative;
+  width: 100%;
+  min-height: 20vh;
+  background-image: url('/bg_globes.svg');
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: -100vh;
+  padding-top: 100vh;
+}
+
+.instagram {
+  background-size: contain;
+  background-image: url('/instagram.svg');
+}
+
+.linkedin {
+  background-size: contain;
+  background-image: url('/linkedin.svg');
+}
+
+.discord {
+  background-size: contain;
+  background-image: url('/discord.svg');
+}
+
+.icon {
+  transition: filter 0.3s ease-in-out;
+}
+
+.linkedin:hover {
+  filter: drop-shadow(0 0 5px #0077b5) drop-shadow(0 0 10px #0077b5) drop-shadow(0 0 15px #0077b5);
+}
+
+.instagram:hover {
+  filter: drop-shadow(0 0 5px #e4405f) drop-shadow(0 0 10px #e4405f) drop-shadow(0 0 15px #e4405f);
+}
+
+.discord:hover {
+  filter: drop-shadow(0 0 5px #7289da) drop-shadow(0 0 10px #7289da) drop-shadow(0 0 15px #7289da);
+}
+
+
+
+@media (min-width: 520px) and (max-width: 768px) {
   .faded-dots {
     top: -60%;
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 520px) {
   .faded-dots {
     top: -80%;
     padding-bottom: 20%;
   }
-}
-
-.background-container {
-  position: absolute;
-  width: 100%;
-  height: 200%;
-  background-image: url('/bg_faded_dots.svg'), url('/bg_shape.svg');
-  /* object-fit: cover; */
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  top: -82%;
-  z-index: -1;
 }
 
 .content {
@@ -89,14 +127,6 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
-
-.cards-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
 }
 
 .card {
