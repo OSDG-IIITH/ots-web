@@ -48,11 +48,12 @@ export default function Home() {
   }, []); // Run this effect only once on component mount
   return (
     <main className="flex flex-col items-center justify-center">
+
       <div className="faded-dots w-full"></div>
       <div className="shape w-full"></div>
       {/* <div className="background-container w-full"> */}
       {/* </div> */}
-      <div className="content flex flex-col items-center justify-center w-full">
+      <section className="content flex flex-col items-center justify-center w-full">
         <div className="main-heading text-center flex flex-col items-center justify-center">
           <div className="heading-media heading-flex flex items-center justify-center">
             <img
@@ -102,9 +103,12 @@ export default function Home() {
 
         </div>
 
-      </div>
+      </section>
+
+
+
       {/* Events */}
-      <div className="pt-30"><h1 className="my-5 mx-0 text-3xl lg:text-5xl font-semibold break-all text-white">2 Days of Non-Stop Events</h1>
+      <section className="p-30"><h2 className="text-center text-2xl md:text-4xl font-bold mb-8 pt-50">2 Days of Non-Stop Events</h2>
         <div className="flex flex-col w-full pl-8 lg:pl-16">
 
           <div className="cards-list mt-8">
@@ -119,6 +123,14 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+      {/* About */}
+      <div className="w-full mt-12 md:mt-24 px-4 py-10 flex flex-row flex-1">
+        <div className="flex justify-center p-24">
+          <img src='/ots_graphic.svg' alt="OTS Graphic" className="w-full" /></div>
+        <div className="flex flex-col justify-center"><h2 className="bg-gradient-to-r from-white via-gray-300 to-gray-600 inline-block text-transparent bg-clip-text text-center text-2xl md:text-4xl font-bold mb-8"
+>The goodness of all your favourite clubs!</h2><h2 className="bg-gradient-to-r from-white via-gray-300 to-gray-600 inline-block text-transparent bg-clip-text text-center text-2xl md:text-4xl font-bold mb-8">Packed into one MEGA Event</h2></div>
+
       </div>
 
       {/* Sponsors */}
