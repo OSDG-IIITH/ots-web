@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import './globals.css';
 import Card from './Card';
 import cardsData from './cardsData.json';
+import Image from "next/image";
+import sponsors from '@/data/sponsors.json';
 
 export default function Home() {
   const [countdown, setCountdown] = useState({ days: 0, hours: 0 });
@@ -101,6 +103,7 @@ export default function Home() {
         </div>
 
       </div>
+      {/* Events */}
       <div className="pt-30"><h1 className="my-5 mx-0 text-3xl lg:text-5xl font-semibold break-all text-white">2 Days of Non-Stop Events</h1>
         <div className="flex flex-col w-full pl-8 lg:pl-16">
 
@@ -115,11 +118,26 @@ export default function Home() {
               />
             ))}
           </div>
-          
         </div>
-
-
       </div>
+
+      {/* Sponsors */}
+      <section className="w-full mt-12 md:mt-24 px-4 bg-[#18181c] py-10">
+        <h2 className="text-center text-2xl md:text-4xl font-bold mb-8">Our Past Sponsors</h2>
+        <div className="flex flex-wrap justify-center gap-8">
+          {sponsors.map((sponsor) => (
+            <div key={sponsor.name} className="relative bg-[#000000] p-4 rounded-lg shadow-lg">
+              <a href={sponsor.websiteURL} className="block w-full h-full">
+                <Image src={sponsor.imageURL} alt={`${sponsor.name} Logo`} width={100} height={50} />
+                <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-75 opacity-0 flex justify-center items-center transition-opacity duration-300 hover:opacity-100 rounded-lg">
+                  <p className="text-white text-center">{sponsor.name}</p>
+                </div>
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
     </main>
   );
 }
