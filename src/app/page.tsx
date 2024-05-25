@@ -187,9 +187,9 @@ export default function Home() {
             })}
         </div>
         <div className="carousel-dots">
-            {actualImagesToShow.map((_, index) => (
+            {actualImagesToShow.map((image, index) => (
                 <div
-                    key={index}
+                    key={image.index}
                     className={`carousel-dot ${index + 1 === currentImageIndex ? 'active' : ''}`}
                     onClick={() => goToImage(index + 1)}
                 ></div>
@@ -199,7 +199,7 @@ export default function Home() {
       {/* Footer */}
       <section className="bg-[#18181c] mt-12 w-full pt-16 py-4">
         <div className="flex flex-row items-center justify-center">
-          <a href="https://www.instagram.com/osdg.iiith" target="_blank" className="instagram h-8 w-8 md:h-16 md:w-16 mx-2"> </a>
+          <a href="https://www.instagram.com/osdg.iiith" target="_blank" className="instagram h-8 w-8 md:h-16 md:w-16 mx-2 mt-1"> </a>
           <a href="https://www.linkedin.com/company/74330374" target="_blank" className="linkedin h-8 w-8 md:h-16 md:w-16 mx-2"> </a>
           <a href="https://discord.com/invite/wRpUHeJrmM" target="_blank" className="discord h-8 w-8 md:h-16 md:w-16 mx-2"> </a>
         </div>
