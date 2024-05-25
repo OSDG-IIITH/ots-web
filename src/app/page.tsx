@@ -2,11 +2,35 @@
 import { useEffect, useState } from "react";
 import './globals.css';
 import Card from './Card';
-import cardsData from './cardsData.json';
+import cardsData from '@/data/cardsData.json';
 import Image from "next/image";
 import sponsors from '@/data/sponsors.json';
+import carouselData from '@/data/carouselData.json';
 
 export default function Home() {
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(1);
+
+  const actualImagesToShow = carouselData.slice(1, -1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNextImage();
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, [currentImageIndex]);
+
+  const goToNextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === carouselData.length - 2 ? 1 : prevIndex + 1
+    );
+  };
+
+  const goToImage = (index) => {
+    setCurrentImageIndex(index);
+  };
+
   const [countdown, setCountdown] = useState({ days: 0, hours: 0 });
 
   useEffect(() => {
@@ -145,9 +169,33 @@ export default function Home() {
       {/* Image Catalog */}
       <section className="mt-16">
         <h2 className="text-center text-2xl md:text-4xl font-bold mb-8">Let's Recreate These Great Moments!</h2> 
-        {/* To Add: Carousel */}
-      </section>
+        <div className="carousel">
+            {carouselData.map((currentImage, index) => {
+                const adjustedIndex = index - 1;
+                const isCurrentImage = adjustedIndex === currentImageIndex - 1;
+                const isPrevImage = adjustedIndex === currentImageIndex - 2;
+                const isNextImage = adjustedIndex === currentImageIndex;
 
+                return (
+                    <img
+                        key={currentImage.index}
+                        src={currentImage.imageLink}
+                        alt={`Image ${index + 1}`}
+                        className={`carousel-image ${isPrevImage ? 'prev' : isCurrentImage ? 'current' : isNextImage ? 'next' : ''}`}
+                    />
+                );
+            })}
+        </div>
+        <div className="carousel-dots">
+            {actualImagesToShow.map((_, index) => (
+                <div
+                    key={index}
+                    className={`carousel-dot ${index + 1 === currentImageIndex ? 'active' : ''}`}
+                    onClick={() => goToImage(index + 1)}
+                ></div>
+            ))}
+        </div>
+      </section>
       {/* Footer */}
       <section className="bg-[#18181c] mt-12 w-full pt-16 py-4">
         <div className="flex flex-row items-center justify-center">

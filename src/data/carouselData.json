@@ -1,0 +1,35 @@
+[
+    {
+        "imageLink": "./CarouselImages/blank.svg", 
+        "index": 0
+    },
+    {
+        "imageLink": "./CarouselImages/image1.jpeg",
+        "index": 1
+    },
+    {
+        "imageLink": "./CarouselImages/image2.jpeg",
+        "index": 2
+    },
+    {
+        "imageLink": "./CarouselImages/image3.jpeg",
+        "index": 3
+    },
+    {
+        "imageLink": "./CarouselImages/image4.jpeg",
+        "index": 4
+    },
+    {
+        "imageLink": "./CarouselImages/image5.jpeg",
+        "index": 5
+    },
+    {
+        "imageLink": "./CarouselImages/image6.jpeg",
+        "index": 6
+    },
+    {
+        "imageLink": "./CarouselImages/blank.svg",
+        "index": 7
+    }
+]
+  
