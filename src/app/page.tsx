@@ -27,11 +27,11 @@ export default function Home() {
     );
   };
 
-  const goToImage = (index) => {
+  const goToImage = (index: number) => {
     setCurrentImageIndex(index);
   };
 
-  const [countdown, setCountdown] = useState({ days: 0, hours: 0 });
+  const [countdown, setCountdown] = useState({ days: "0", hours: "0" });
 
   useEffect(() => {
     const targetDate = new Date("2024-09-11T00:00:00+05:30").getTime(); // 00:00 IST
@@ -119,13 +119,12 @@ export default function Home() {
       {/* Events */}
       <section className="p-8 md:p-30">
         <h2 className="flex items-center justify-center text-2xl md:text-4xl font-bold mt-8 md:mt-24">
-          2 Days of Non-Stop Events
+          3 Days of Non-Stop Events
         </h2>
         <div className="flex flex-wrap justify-center w-full mt-8 gap-4">
           {cardsData.map((card, index) => (
-            <div className="flex justify-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+            <div key={index} className="flex justify-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
               <Card
-                key={index}
                 title={card.title}
                 club={card.club}
                 description={card.description}
@@ -142,7 +141,7 @@ export default function Home() {
         <div className="flex justify-center">
           <img src='/ots_graphic.svg' alt="OTS Graphic" className="w-full" /></div>
         <div className="flex flex-col justify-center"><h2 className="bg-gradient-to-r from-white via-gray-300 to-gray-600 inline-block text-transparent bg-clip-text text-center text-2xl md:text-4xl font-bold mb-8"
->The goodness of all your favourite clubs!</h2><h2 className="bg-gradient-to-r from-white via-gray-300 to-gray-600 inline-block text-transparent bg-clip-text text-center text-2xl md:text-4xl font-bold mb-8">Packed into one MEGA Event</h2></div>
+        >The goodness of all your favourite clubs!</h2><h2 className="bg-gradient-to-r from-white via-gray-300 to-gray-600 inline-block text-transparent bg-clip-text text-center text-2xl md:text-4xl font-bold mb-8">Packed into one MEGA Event</h2></div>
 
       </div>
 
@@ -165,35 +164,35 @@ export default function Home() {
 
       {/* Background section */}
       <div className="globes w-full"></div>
-      
+
       {/* Image Catalog */}
       <section className="mt-16">
-        <h2 className="text-center text-2xl md:text-4xl font-bold mb-8">Let's Recreate These Great Moments!</h2> 
+        <h2 className="text-center text-2xl md:text-4xl font-bold mb-8">Let&apos;s Recreate These Great Moments!</h2>
         <div className="carousel">
-            {carouselData.map((currentImage, index) => {
-                const adjustedIndex = index - 1;
-                const isCurrentImage = adjustedIndex === currentImageIndex - 1;
-                const isPrevImage = adjustedIndex === currentImageIndex - 2;
-                const isNextImage = adjustedIndex === currentImageIndex;
+          {carouselData.map((currentImage, index) => {
+            const adjustedIndex = index - 1;
+            const isCurrentImage = adjustedIndex === currentImageIndex - 1;
+            const isPrevImage = adjustedIndex === currentImageIndex - 2;
+            const isNextImage = adjustedIndex === currentImageIndex;
 
-                return (
-                    <img
-                        key={currentImage.index}
-                        src={currentImage.imageLink}
-                        alt={`Image ${index + 1}`}
-                        className={`carousel-image ${isPrevImage ? 'prev' : isCurrentImage ? 'current' : isNextImage ? 'next' : ''}`}
-                    />
-                );
-            })}
+            return (
+              <img
+                key={currentImage.index}
+                src={currentImage.imageLink}
+                alt={`Image ${index + 1}`}
+                className={`carousel-image ${isPrevImage ? 'prev' : isCurrentImage ? 'current' : isNextImage ? 'next' : ''}`}
+              />
+            );
+          })}
         </div>
         <div className="carousel-dots">
-            {actualImagesToShow.map((image, index) => (
-                <div
-                    key={image.index}
-                    className={`carousel-dot ${index + 1 === currentImageIndex ? 'active' : ''}`}
-                    onClick={() => goToImage(index + 1)}
-                ></div>
-            ))}
+          {actualImagesToShow.map((image, index) => (
+            <div
+              key={image.index}
+              className={`carousel-dot ${index + 1 === currentImageIndex ? 'active' : ''}`}
+              onClick={() => goToImage(index + 1)}
+            ></div>
+          ))}
         </div>
       </section>
       {/* Footer */}
