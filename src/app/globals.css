@@ -3,17 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
@@ -26,8 +18,191 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.faded-dots {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  background-image: url('/bg_faded_dots.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: -40%;
+  z-index: -1;
+}
+
+.shape {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  background-image: url('/bg_shape.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: -82%;
+  z-index: -1;
+  /* padding-bottom: 10%; */
+}
+
+.globes {
+  position: relative;
+  width: 100%;
+  min-height: 20vh;
+  background-image: url('/bg_globes.svg');
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: -100vh;
+  padding-top: 100vh;
+}
+
+.instagram {
+  background-size: contain;
+  background-image: url('/instagram.svg');
+}
+
+.linkedin {
+  background-size: contain;
+  background-image: url('/linkedin.svg');
+}
+
+.discord {
+  background-size: contain;
+  background-image: url('/discord.svg');
+}
+
+.icon {
+  transition: filter 0.3s ease-in-out;
+}
+
+.linkedin:hover {
+  filter: drop-shadow(0 0 5px #0077b5) drop-shadow(0 0 10px #0077b5) drop-shadow(0 0 15px #0077b5);
+}
+
+.instagram:hover {
+  filter: drop-shadow(0 0 5px #e4405f) drop-shadow(0 0 10px #e4405f) drop-shadow(0 0 15px #e4405f);
+}
+
+.discord:hover {
+  filter: drop-shadow(0 0 5px #7289da) drop-shadow(0 0 10px #7289da) drop-shadow(0 0 15px #7289da);
+}
+
+@media (min-width: 520px) and (max-width: 768px) {
+  .faded-dots {
+    top: -60%;
+  }
+}
+
+@media (max-width: 520px) {
+  .faded-dots {
+    top: -80%;
+    padding-bottom: 20%;
+  }
+}
+
+.content {
+  position: relative;
+  
+  z-index: 1;
+  
+}
+.flex-auto {
+  padding-left: 1%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.card {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0 4px;
+}
+
+.carousel img {
+  transition: transform 0.5s ease, scale 0.5s ease, opacity 0.5s ease;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: scale(0.5) translateX(100%);
+  display: none;
+  position: absolute;
+}
+
+.carousel img.current {
+  transition: transform 0.5s ease, scale 0.5s ease, opacity 0.5s ease;
+  display: block;
+  opacity: 1;
+  transform: scale(1) translateX(0%);
+  position: relative;
+  max-width: 95%;
+}
+
+.carousel img.prev,
+.carousel img.next {
+  transition: transform 0.5s ease, scale 0.5s ease, opacity 0.5s ease;
+  display: block;
+  opacity: 0.4;
+  transform: scale(0.5) translate(0%);
+  position: relative;
+}
+
+.carousel img.next.current,
+.carousel img.current.prev {
+    opacity: 1;
+    transform: scale(1) translateX(100%);
+}
+
+@media (max-width: 768px) {
+  .carousel img.prev,
+  .carousel img.next {
+      display: none;
+  }
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #275fe8;
+  margin: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background-color: #4fd4cd;
 }
