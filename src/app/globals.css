@@ -22,7 +22,7 @@ body {
   position: absolute;
   width: 100%;
   height: 200%;
-  background-image: url('/bg_faded_dots.svg');
+  background-image: url('/ots/bg_faded_dots.svg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -34,7 +34,7 @@ body {
   position: absolute;
   width: 100%;
   height: 200%;
-  background-image: url('/bg_shape.svg');
+  background-image: url('/ots/bg_shape.svg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -47,7 +47,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 20vh;
-  background-image: url('/bg_globes.svg');
+  background-image: url('/ots/bg_globes.svg');
   background-size: contain;
   background-position: center;
   background-attachment: fixed;
@@ -63,17 +63,17 @@ body {
 
 .instagram {
   background-size: contain;
-  background-image: url('/instagram.svg');
+  background-image: url('/ots/instagram.svg');
 }
 
 .linkedin {
   background-size: contain;
-  background-image: url('/linkedin.svg');
+  background-image: url('/ots/linkedin.svg');
 }
 
 .discord {
   background-size: contain;
-  background-image: url('/discord.svg');
+  background-image: url('/ots/discord.svg');
 }
 
 .icon {

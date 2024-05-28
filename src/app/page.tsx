@@ -46,7 +46,7 @@ export default function Home() {
         <div className="main-heading text-center flex flex-col items-center justify-center">
           <div className="heading-media heading-flex flex items-center justify-center">
             <img
-              src="/logo.svg"
+              src="/ots/logo.svg"
               alt="Open Tech Summit Logo"
               className="responsive-image max-w-[25%] max-h-[25%]"
             />
@@ -100,7 +100,7 @@ export default function Home() {
                 title={card.title}
                 club={card.club}
                 description={card.description}
-                icon={card.icon}
+                icon={`/ots/${card.icon}`}
               />
             </div>
           ))}
@@ -111,7 +111,7 @@ export default function Home() {
       {/* About */}
       <div className="w-full px-4 py-10 flex flex-row flex-1">
         <div className="flex justify-center">
-          <img src='/ots_graphic.svg' alt="OTS Graphic" className="w-full" /></div>
+          <img src='/ots/ots_graphic.svg' alt="OTS Graphic" className="w-full" /></div>
         <div className="flex flex-col justify-center"><h2 className="bg-gradient-to-r from-white via-gray-300 to-gray-600 inline-block text-transparent bg-clip-text text-center text-2xl md:text-4xl font-bold mb-8"
         >The goodness of all your favourite clubs!</h2><h2 className="bg-gradient-to-r from-white via-gray-300 to-gray-600 inline-block text-transparent bg-clip-text text-center text-2xl md:text-4xl font-bold mb-8">Packed into one MEGA Event</h2></div>
 
