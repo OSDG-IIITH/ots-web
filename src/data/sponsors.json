@@ -1,52 +1,27 @@
 [
     {
-        "imageURL": "https://robohash.org/sponsor1",
-        "websiteURL": "https://www.google.com",
-        "name": "Sponsor 1"
+        "imageURL": "https://avatars.githubusercontent.com/u/82165671?s=200&v=4",
+        "websiteURL": "https://www.questbook.app/",
+        "name": "Questbook"
     },
     {
-        "imageURL": "https://robohash.org/sponsor2",
-        "websiteURL": "https://www.youtube.com",
-        "name": "Sponsor 2"
+        "imageURL": "https://avatars.githubusercontent.com/u/38809367?s=280&v=4",
+        "websiteURL": "https://devfolio.co/",
+        "name": "Devfolio"
     },
     {
-        "imageURL": "https://robohash.org/sponsor3",
-        "websiteURL": "https://www.google.com",
-        "name": "Sponsor 3"
+        "imageURL": "https://avatars.githubusercontent.com/u/37552875?s=200&v=4",
+        "websiteURL": "https://celo.org/",
+        "name": "Celo"
     },
     {
-        "imageURL": "https://robohash.org/sponsor4",
-        "websiteURL": "https://www.youtube.com",
-        "name": "Sponsor 4"
+        "imageURL": "https://avatars.githubusercontent.com/u/21209817?s=200&v=4",
+        "websiteURL": "https://tezos.com/",
+        "name": "Tezos"
     },
     {
-        "imageURL": "https://robohash.org/sponsor5",
-        "websiteURL": "https://www.google.com",
-        "name": "Sponsor 5"
-    },
-    {
-        "imageURL": "https://robohash.org/sponsor6",
-        "websiteURL": "https://www.youtube.com",
-        "name": "Sponsor 6"
-    },
-    {
-        "imageURL": "https://robohash.org/sponsor7",
-        "websiteURL": "https://www.google.com",
-        "name": "Sponsor 7"
-    },
-    {
-        "imageURL": "https://robohash.org/sponsor8",
-        "websiteURL": "https://www.youtube.com",
-        "name": "Sponsor 8"
-    },
-    {
-        "imageURL": "https://robohash.org/sponsor9",
-        "websiteURL": "https://www.google.com",
-        "name": "Sponsor 9"
-    },
-    {
-        "imageURL": "https://robohash.org/sponsor10",
-        "websiteURL": "https://www.youtube.com",
-        "name": "Sponsor 10"
+        "imageURL": "https://avatars.githubusercontent.com/u/22014611?s=200&v=4",
+        "websiteURL": "https://filecoin.io/",
+        "name": "Filecoin"
     }
 ]
