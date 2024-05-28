@@ -81,13 +81,9 @@ export default function Home() {
           {/* Keep Me Updated Button */}
           <div className="flex flex-col items-center justify-center mt-5">
             <div className="bg-gradient-to-r from-[#4fd4cd] to-[#275fe8] text-white rounded-lg md:mt-4 mb-8">
-              {/* To Add: Link Not Working */}
-              {/* <a
-                  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=OTS&details=Open Tech Summit 2024 IIIT-H&dates=20240911T103000/20240913T184500&location=IIIT Hyderabad"
-                  className="hover:bg-blue-700 text-white font-bold py-2 md:px-4 rounded inline-block bg-gradient-to-r from-[#4fd4cd] to-[#275fe8] text-white"
-                > */}
-              <p className="px-5 py-2 text-sm md:text-2xl rounded-xl">Keep me updated</p>
-              {/* </a> */}
+              <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MW5ub3FrM2lyMGJma25xZWhudTNnbnI0bXEgcHJhbmVldGhqYWluMDA1QG0&amp;tmsrc=praneethjain005%40gmail.com">
+                <p className="px-5 py-2 text-sm md:text-2xl rounded-xl">Keep me updated</p>
+              </a>
             </div>
           </div>
         </div>
