@@ -3,31 +3,31 @@
       "title": "Capture The Flag",
       "club": "0x1337: The Hacking Club",
       "description": "Participants need to find flags hidden in software. The team with the most points after collecting all flags wins!",
-      "icon": "/logo.svg"
+      "icon": "/clubs/hacking.png"
     },
     {
       "title": "Exoplanet Hunt",
       "club": "Astronomy Club",
       "description": "Astronomy is not just about gazing at the stars! This event is an SQL based competition to identify habitable exoplanets from a plethora of ones!",
-      "icon": "/logo.svg"
+      "icon": "/clubs/astronomy.png"
     },
     {
       "title": "Escape Room",
       "club": "Electronics and Robotics Club",
       "description": "Multiple levels which will have problem statements that the participant would be expected to solve in order to progress through the game.",
-      "icon": "/logo.svg"
+      "icon": "/clubs/erc.png"
     },
     {
       "title": "Tech Quiz",
       "club": "The TV Room Quiz Club",
       "description": "A General quiz with special rounds for tech specific questions",
-      "icon": "/logo.svg"
+      "icon": "/clubs/tvrqc.png"
     },
     {
       "title": "The Chess Bot Challenge",
       "club": "The Chess Club",
       "description": "A contest designed for developers and chess enthusiasts to showcase their programming skills and strategic thinking",
-      "icon": "/logo.svg"
+      "icon": "/clubs/chess.jpeg"
     }
 ]
   
