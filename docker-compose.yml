@@ -1,0 +1,17 @@
+version: '3.8'
+
+networks:
+  ots_website_network:
+    ipam:
+      config:
+        - subnet: 172.21.2.0/24
+
+services:
+    ots_website:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        networks:
+            ots_website_network:
+                ipv4_address: 172.21.2.2
+        tty: true
