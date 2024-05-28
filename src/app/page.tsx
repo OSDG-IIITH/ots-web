@@ -10,7 +10,7 @@ export default function Home() {
   const [countdown, setCountdown] = useState({ days: "0", hours: "0" });
 
   useEffect(() => {
-    const targetDate = new Date("2024-09-11T00:00:00+05:30").getTime(); // 00:00 IST
+    const targetDate = new Date("2024-10-11T00:00:00+05:30").getTime(); // 00:00 IST
     const currentDate = new Date().getTime();
     const timeDifference = targetDate - currentDate;
     const remainingDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -61,7 +61,7 @@ export default function Home() {
             <span className="enlarge-text bg-white text-2xl md:text-4xl text-transparent bg-clip-text">th</span>
             <span className="enlarge-text bg-white text-2xl md:text-4xl font-bold text-transparent bg-clip-text"> to 13</span>
             <span className="enlarge-text bg-white text-2xl md:text-4xl text-transparent bg-clip-text">th</span>
-            <span className="enlarge-text bg-gradient-to-r from-white to-[#80d8de] text-2xl md:text-4xl font-bold text-transparent bg-clip-text"> September</span>
+            <span className="enlarge-text bg-gradient-to-r from-white to-[#80d8de] text-2xl md:text-4xl font-bold text-transparent bg-clip-text"> October</span>
           </h1>
           {/* Countdown */}
           <div className="flex flex-row items-center justify-evenly text-transparent">
