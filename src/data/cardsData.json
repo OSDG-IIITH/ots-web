@@ -18,16 +18,33 @@
       "icon": "/clubs/erc.png"
     },
     {
+      "title": "Bug Bounty",
+      "club": "Open Source Developers Group",
+      "description": "Inspect open source code, catch all the bugs as fast as possible!",
+      "icon": "/clubs/osdg.png"
+    },
+    {
+      "title": "Fool's programming",
+      "club": "Programming Club",
+      "description": "Like a short programming contest, but with a twist! The hardest part of the problem is not programming the solution but deciphering the question.",
+      "icon": "/clubs/prog.jpeg"
+    },
+    {
       "title": "Tech Quiz",
       "club": "The TV Room Quiz Club",
-      "description": "A General quiz with special rounds for tech specific questions",
+      "description": "A General quiz with special rounds for tech specific questions.",
       "icon": "/clubs/tvrqc.png"
     },
     {
       "title": "The Chess Bot Challenge",
-      "club": "The Chess Club",
-      "description": "A contest designed for developers and chess enthusiasts to showcase their programming skills and strategic thinking",
+      "club": "The Chess Club x The Gaming Club",
+      "description": "A contest designed for game developers and chess enthusiasts to showcase their programming skills and strategic thinking",
       "icon": "/clubs/chess.jpeg"
+    },
+    {
+      "title": "Theory Group: Workshop",
+      "club": "Theory Group",
+      "description": "Dive into a Theoretical CS problem, exploring not only the history and famous approaches, but also implement them!",
+      "icon": "/clubs/theory.jpeg"
     }
 ]
-  
