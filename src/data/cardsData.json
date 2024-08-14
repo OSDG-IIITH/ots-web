@@ -7,9 +7,9 @@
     },
     {
       "title": "Exoplanet Hunt",
-      "club": "Astronomy Club",
-      "description": "Astronomy is not just about gazing at the stars! This event is an SQL based competition to identify habitable exoplanets from a plethora of ones!",
-      "icon": "/clubs/astronomy.png"
+      "club": "Astronautics Club",
+      "description": "Astronautics is not just about gazing at the stars! This event is an SQL based competition to identify habitable exoplanets from a plethora of ones!",
+      "icon": "/clubs/astronautics.webp"
     },
     {
       "title": "Escape Room",
